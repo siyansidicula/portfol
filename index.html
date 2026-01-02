@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siyan S Idicula | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: #f1f1f1; }
+
+    header, footer { background-color: #1e293b; padding: 1rem 2rem; text-align: center; }
+    .top-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 30px; background-color: #0f2027; color: white; }
+    .left-name { font-weight: bold; font-size: 20px; }
+    .center-heading { font-size: 22px; font-weight: bold; flex: 1; text-align: center; }
+    .right-icons a img { width: 24px; height: 24px; margin-left: 10px; }
+
+    section { padding: 3rem 2rem; max-width: 800px; margin: auto; }
+
+    h1, h2 { text-align: center; }
+
+    .project { background-color: rgba(255,255,255,0.05); border-radius: 15px; padding: 1rem; margin: 1rem 0; box-shadow: 0 0 10px rgba(0,0,0,0.2); transition: 0.3s; }
+    .project:hover { transform: translateY(-5px); box-shadow: 0 4px 20px rgba(59,130,246,0.5); }
+    .project a { color: #3b82f6; text-decoration: none; }
+
+    form input, form textarea { width: 100%; padding: 0.8rem; margin-bottom: 1rem; background-color: #334155; border: 1px solid #475569; border-radius: 8px; color: white; }
+    form button { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 0.9rem 2rem; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    form button:hover { transform: scale(1.05); background-color: #3b82f6; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const Header = () => (
+      <header className="top-header">
+        <div className="left-name">Siyan S Idicula</div>
+        <div className="center-heading">Portfolio</div>
+        <div className="right-icons">
+          <a href="https://github.com/siyansidicula" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/siyan-s-idicula-b71a0b339/" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </header>
+    );
+
+    const Home = () => (
+      <section>
+        <h1>Hi, I am Siyan S Idicula</h1>
+        <p style={{ textAlign: "center", marginTop: "1rem" }}>
+          I am a passionate BTech student with a strong interest in coding, problem-solving, and technology-driven innovation. 
+I enjoy learning by doing and consistently work on improving my technical and logical skills through hands-on practice. 
+Alongside technology, I have a deep interest in design and creativity, where I enjoy turning ideas into visually meaningful and impactful designs.
+        </p>
+      </section>
+    );
+
+    const About = () => (
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I enjoy designing posters, digital creatives, and visual concepts that communicate ideas clearly and creatively. 
+I focus on balancing aesthetics with purpose, ensuring that every design tells a story while remaining simple and effective.I work with design tools such as Canva and Figma to create clean and modern visuals. My background in coding helps me approach design with logical thinking, structure, and attention to detail, allowing me to blend creativity with problem-solving.
+        </p>
+        <h3>Skills</h3>
+        <ul>
+          <li>Languages: Python, C, HTML, CSS, JavaScript</li>
+          <li>Tools: Git, GitHub, Codesandbox</li>
+        </ul>
+      </section>
+    );
+
+    const Projects = () => (
+      <section>
+        <h2>Projects</h2>
+        <div className="project">
+          <h3>Netflix Clone</h3>
+          <p>A simple Netflix homepage clone built using HTML, CSS, and JavaScript..</p>
+          <a href="https://netflixclone-15vw3b2n8-siyan-s-idiculas-projects.vercel.app/">View on Vercel</a>
+        </div>
+        <div className="project">
+          <h3>To-Do List</h3>
+          <p>A minimalist  to-do list app with local storage.</p>
+          <a href="https://siyansidicula.github.io/to-do-list/" target="_blank">View on GitHub</a>
+        </div>
+        <div className="project">
+          <h3>Silly Story Generator</h3>
+          <p>Fun project that generates random stories with custom names.</p>
+          <a href="https://siyansidicula.github.io/silly-story-generator/" target="_blank">View on GitHub</a>
+        </div>
+      </section>
+    );
+
+    const Contact = () => (
+      <section>
+        <h2>Contact Me</h2>
+        <form onSubmit={(e) => { e.preventDefault(); alert("Message sent!"); }}>
+          <input type="text" placeholder="First Name" required /><br/>
+          <input type="email" placeholder="Email" required /><br/>
+          <textarea placeholder="Your Message" rows="5" required></textarea><br/>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    );
+
+    const Footer = () => (
+      <footer>
+        &copy; 2025 Siyan S Idicula 
+      </footer>
+    );
+
+    const App = () => (
+      <>
+        <Header />
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </>
+    );
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
